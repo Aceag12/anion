@@ -1,0 +1,25 @@
+import asyncio
+import discord
+from discord.ext.commands import Bot
+
+Client = Bot('alexa ')
+@client.command(pass_context=True)
+async def on_ready():
+    print ("Starting up")
+    print ("My username is " + bot.user.name + " and i am running with the ID: " + bot.user.id)
+    await bot.change_presence(game=discord.Game(name="SERVER BOTS", type=1))
+    print ("Started")
+    await bot.change_presence(game=discord.Game(name="SERVER MEMBERS", type=2))
+    print ("Started")
+    await bot.change_presence(game=discord.Game(name="ANIONS VIDEOS", type=3))
+    print ("Started")
+
+@Client.command(pass_context = True)
+async def clear(ctx, number):
+    mgs = [] 
+    number = int(number) 
+    async for x in Client.logs_from(ctx.message.channel, limit = number):
+        mgs.append(x)
+    await Client.delete_messages(mgs)
+    
+Client.run(str(os.environ.get('BOT_TOKEN')))
