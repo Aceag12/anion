@@ -1,6 +1,10 @@
-import asyncio
 import discord
-from discord.ext.commands import Bot
+from discord.ext import commands
+from discord.ext.commands import bot
+import asyncio
+import random
+import requests
+import os
 
 Client = Bot('alexa ')
 @client.command(pass_context=True)
