@@ -1,0 +1,13 @@
+import asyncio
+import discord
+from discord.ext.commands import Bot
+
+Mike = Bot('alexa ')
+
+@Mike.command(pass_context = True)
+async def say(ctx, *args):
+    mesg = ' '.join(args)
+    return await Mike.say(mesg)
+
+Mike.run(str(os.environ.get('BOT_TOKEN')))
+
