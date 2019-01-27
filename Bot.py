@@ -1,10 +1,10 @@
 import discord
-from discord.ext.commands import Bot
 from discord.ext import commands
+from discord.ext.commands import bot
 import asyncio
-import time
 import random
-from discord import Game
+import requests
+import os
 
 
 Client = discord.client
